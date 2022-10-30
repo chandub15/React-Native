@@ -20,6 +20,7 @@ export default function SignIn({ navigation }) {
                 value={password}
                 placeholder="Password"
                 textContentType="password"
+                secureTextEntry={true}
             />
             <View style={styles.buttonContainer} >
 

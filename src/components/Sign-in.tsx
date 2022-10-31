@@ -22,10 +22,13 @@ export default function SignIn({ navigation }) {
                 textContentType="password"
             />
             <View style={styles.buttonContainer} >
-
-                <TouchableOpacity style={styles.button} onPress={() =>
-                    Alert.alert("Cofirmation", `Your Email Address ${emailAddress}`)
-                } disabled={emailAddress && password ? false : true}>
+                <TouchableOpacity style={styles.button} onPress={() => {
+                    if (emailAddress.toLowerCase() === "admin" && password.toLowerCase() === "admin") {
+                        navigation.navigate("home")
+                    }else{
+                        Alert.alert("Authentication Error", `You are not authenticated to login`)
+                    }
+                }} disabled={emailAddress && password ? false : true}>
                     <Text style={styles.signInText}>Sign in</Text>
                 </TouchableOpacity>
                 <Text style={styles.signup}>Not a user? Please

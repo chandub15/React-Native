@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, TextInput, SafeAreaView, TouchableOpacity, Text, View, Alert } from 'react-native';
+import Header from './Header';
 
 export default function SignIn({ navigation }) {
     const [emailAddress, setEmailAddress] = useState("");
@@ -7,45 +8,53 @@ export default function SignIn({ navigation }) {
 
     return (
         <SafeAreaView style={styles.container}>
-            <TextInput
-                style={styles.input}
-                onChangeText={setEmailAddress}
-                value={emailAddress}
-                placeholder="Email Address"
-                textContentType="emailAddress"
-            />
-            <TextInput
-                style={styles.input}
-                onChangeText={setPassword}
-                value={password}
-                placeholder="Password"
-                textContentType="password"
-                secureTextEntry={true}
-            />
-            <View style={styles.buttonContainer} >
-                <TouchableOpacity style={styles.button} onPress={() => {
-                    if (emailAddress.toLowerCase() === "admin" && password.toLowerCase() === "admin") {
-                        navigation.navigate("home")
-                    }else{
-                        Alert.alert("Authentication Error", `You are not authenticated to login`)
-                    }
-                }} disabled={emailAddress && password ? false : true}>
-                    <Text style={styles.signInText}>Sign in</Text>
-                </TouchableOpacity>
-                <Text style={styles.signup}>Not a user? Please
-                    <Text style={styles.signupLink} onPress={() => { navigation.navigate('Sign Up') }}> Sign up </Text>
-                </Text>
-            </View >
+            <Header />
+            <View style={styles.bodyContainer}>
+                <TextInput
+                    style={styles.input}
+                    onChangeText={setEmailAddress}
+                    value={emailAddress}
+                    placeholder="Email Address"
+                    textContentType="emailAddress"
+                />
+                <TextInput
+                    style={styles.input}
+                    onChangeText={setPassword}
+                    value={password}
+                    placeholder="Password"
+                    textContentType="password"
+                    secureTextEntry={true}
+                />
+                <View style={styles.buttonContainer} >
+                    <TouchableOpacity style={styles.button} onPress={() => {
+                        if (emailAddress.toLowerCase() === "admin" && password.toLowerCase() === "admin") {
+                            navigation.navigate("Home")
+                        } else {
+                            Alert.alert("Authentication Error", `You are not authenticated to login`)
+                        }
+                    }} disabled={emailAddress && password ? false : true}>
+                        <Text style={styles.signInText}>Sign in</Text>
+                    </TouchableOpacity>
+                    <Text style={styles.signup}>Not a user? Please
+                        <Text style={styles.signupLink} onPress={() => { navigation.navigate('Sign Up') }}> Sign up </Text>
+                    </Text>
+                </View >
+            </View>
+
         </SafeAreaView >
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        flex:1,
         backgroundColor: '#fff',
-        flexDirection: "column",
+    },
+    bodyContainer:{
+        backgroundColor: '#fff',
         justifyContent: "center",
+        height:"100%"
+
     },
     input: {
         height: 40,

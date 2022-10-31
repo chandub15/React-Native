@@ -1,25 +1,29 @@
 import React from 'react';
 import { StyleSheet, SafeAreaView, TouchableOpacity, Text, View, Alert } from 'react-native';
+import Header from './Header';
 
-export default function Home({  }) {
+export default function Home({ }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.titleContainer} >
-        <Text style={styles.titleText} >Recipe & Inventory Management</Text>
+      <Header />
+      <View style={styles.bodyContainer}>
+        <View style={styles.titleContainer} >
+          <Text style={styles.titleText} >Recipe & Inventory Management</Text>
+        </View>
+        <View style={styles.buttonContainer} >
+          <TouchableOpacity style={[styles.button, styles.boxShadow]} onPress={() => {
+            Alert.alert("Oops!! ", `We are launching soon`)
+          }}>
+            <Text style={styles.buttonText}>Recipe Mangement</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.button, styles.boxShadow]} onPress={() => {
+            Alert.alert("Oops!! ", `We are launching soon`)
+          }}>
+            <Text style={styles.buttonText}>Inventory Mangement</Text>
+          </TouchableOpacity>
+        </View >
       </View>
-      <View style={styles.buttonContainer} >
-        <TouchableOpacity style={[styles.button, styles.boxShadow]} onPress={() => {
-          Alert.alert("Oops!! ", `We are launching soon`)
-        }}>
-          <Text style={styles.buttonText}>Recipe Mangement</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.button, styles.boxShadow]} onPress={() => {
-          Alert.alert("Oops!! ", `We are launching soon`)
-        }}>
-          <Text style={styles.buttonText}>Inventory Mangement</Text>
-        </TouchableOpacity>
-      </View >
     </SafeAreaView >
   );
 }
@@ -29,6 +33,11 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
     flex: 1,
+  },
+  bodyContainer:{
+    backgroundColor: '#fff',
+    justifyContent: "center",
+    height:"100%"
   },
   titleContainer: {
     flex: 1,

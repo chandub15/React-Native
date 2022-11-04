@@ -46,7 +46,10 @@ export default function Signup({ navigation }) {
         />
         <View style={styles.buttonContainer} >
           <TouchableOpacity style={styles.button} onPress={() => {
-            if (emailAddress !== confirmEmailAddress) {
+            if (emailAddress.length === 0 && confirmEmailAddress.length === 0 && password.length === 0 && confirmPassword.length === 0) {
+              Alert.alert("Oops", "Please fill all the details above")
+            }
+            else if (emailAddress !== confirmEmailAddress) {
               Alert.alert("Mismatch", "Please check your email")
             } else if (password !== confirmPassword) {
               Alert.alert("Mismatch", "Please check your password")
@@ -55,7 +58,7 @@ export default function Signup({ navigation }) {
               navigation.navigate("Sign In")
             }
           }}
-            disabled={emailAddress && confirmEmailAddress && password && confirmPassword ? false : true}>
+          >
             <Text style={styles.signUpText}>Sign up</Text>
           </TouchableOpacity>
         </View >

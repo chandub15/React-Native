@@ -3,7 +3,6 @@ import { StyleSheet, SafeAreaView, Image } from 'react-native';
 
 export default function Header() {
   
-
     return (
         <SafeAreaView style={styles.container}>
             <Image style={styles.image} source={require("../../assets/header.png")} />

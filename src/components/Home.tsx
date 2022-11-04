@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, SafeAreaView, TouchableOpacity, Text, View, Alert } from 'react-native';
 import Header from './Header';
 
-export default function Home({ }) {
+export default function Home({ navigation }) {
 
   return (
     <SafeAreaView style={styles.container}>
@@ -23,6 +23,23 @@ export default function Home({ }) {
             <Text style={styles.buttonText}>Inventory Mangement</Text>
           </TouchableOpacity>
         </View >
+        <View style={styles.profileButtonContainer} >
+          <TouchableOpacity style={styles.contactButton} onPress={() => {
+            navigation.navigate("Contact")
+          }} >
+            <Text style={styles.profileText}>Contact</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.profileButton} onPress={() => {
+            navigation.navigate("Profile")
+          }} >
+            <Text style={styles.profileText}>User Profile</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.teamButton} onPress={() => {
+            navigation.navigate("Team")
+          }} >
+            <Text style={styles.teamText}>Our Team</Text>
+          </TouchableOpacity>
+        </View >
       </View>
     </SafeAreaView >
   );
@@ -34,10 +51,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     flex: 1,
   },
-  bodyContainer:{
+  bodyContainer: {
     backgroundColor: '#fff',
     justifyContent: "center",
-    height:"100%"
+    height: "100%"
   },
   titleContainer: {
     flex: 1,
@@ -80,5 +97,37 @@ const styles = StyleSheet.create({
     color: "#fff",
     textAlign: "center",
     fontWeight: "600"
+  },
+  profileButtonContainer: {
+    padding: 10,
+    flexDirection: 'row',
+
+  },
+  contactButton: {
+    backgroundColor: "#FA6E3B",
+    padding: 10,
+    flex: 1,
+    borderRightColor: "#FFF",
+    borderRightWidth: 1
+  },
+  profileButton: {
+    backgroundColor: "#FA6E3B",
+    padding: 10,
+    flex: 1,
+    borderRightColor: "#FFF",
+    borderRightWidth: 1
+  },
+  profileText: {
+    color: "#fff",
+    textAlign: "center"
+  },
+  teamButton: {
+    backgroundColor: "#FA6E3B",
+    padding: 10,
+    flex: 1,
+  },
+  teamText: {
+    color: "#fff",
+    textAlign: "center"
   }
 });

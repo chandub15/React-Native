@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyleSheet, SafeAreaView, TouchableOpacity, Text, View, Alert } from 'react-native';
 import Header from './Header';
-
+import commonStyles from "../styles/common"
 export default function Home({ navigation }) {
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={commonStyles.container}>
       <Header />
       <View style={styles.bodyContainer}>
         <View style={styles.titleContainer} >
@@ -22,24 +22,14 @@ export default function Home({ navigation }) {
           }}>
             <Text style={styles.buttonText}>Inventory Mangement</Text>
           </TouchableOpacity>
-        </View >
-        <View style={styles.profileButtonContainer} >
-          <TouchableOpacity style={styles.contactButton} onPress={() => {
-            navigation.navigate("Contact")
-          }} >
-            <Text style={styles.profileText}>Contact</Text>
+        </View>
+        <View style={styles.teamContainer} >
+          <TouchableOpacity style={[styles.button, styles.boxShadow]} onPress={() => {
+           navigation.navigate("Team")
+          }}>
+            <Text style={styles.buttonText}>Our Team</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.profileButton} onPress={() => {
-            navigation.navigate("Profile")
-          }} >
-            <Text style={styles.profileText}>User Profile</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.teamButton} onPress={() => {
-            navigation.navigate("Team")
-          }} >
-            <Text style={styles.teamText}>Our Team</Text>
-          </TouchableOpacity>
-        </View >
+        </View>
       </View>
     </SafeAreaView >
   );
@@ -72,8 +62,15 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   buttonContainer: {
-    flex: 2,
+    flex: 1,
     marginTop: 50,
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignItems: "baseline",
+    backgroundColor: '#fff',
+  },
+  teamContainer:{
+    flex: 1,
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems: "baseline",

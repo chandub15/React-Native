@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, SafeAreaView, Text, View, Image } from 'react-native';
+import { StyleSheet, SafeAreaView, Text, View, Image, ScrollView } from 'react-native';
 
 export default function Team({ navigation }) {
     const teamDetails = [{
@@ -33,8 +33,8 @@ export default function Team({ navigation }) {
     }]
     return (
         <SafeAreaView style={styles.container}>
+            <ScrollView >
             <View style={styles.bodyContainer}>
-            <Text style={styles.titleText}>Team Details</Text>
 
                 {
                     teamDetails.map(team => {
@@ -54,6 +54,7 @@ export default function Team({ navigation }) {
                     })
                 }
             </View>
+            </ScrollView>
         </SafeAreaView >
     );
 }
@@ -69,13 +70,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         height: "100%",
         padding:10,
-        marginTop:20
     },
-    titleText:{
-        textAlign:"center",
-        fontWeight:"600",
-        fontSize:25
-    },  
     teamCard: {
         width: "100%",
         height: 120,

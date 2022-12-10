@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { StyleSheet, TextInput, SafeAreaView, TouchableOpacity, Text, View, Alert } from 'react-native';
-import Header from './Header';
 
 export default function Signup({ navigation }) {
 
@@ -11,7 +10,6 @@ export default function Signup({ navigation }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Header />
       <View style={styles.bodyContainer}>
         <Text style={styles.signUpTitle}>Sign Up</Text>
         <TextInput

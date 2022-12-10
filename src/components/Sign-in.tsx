@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { StyleSheet, TextInput, SafeAreaView, TouchableOpacity, Text, View, Alert } from 'react-native';
 import Header from './Header';
+import commonStyles from "../styles/common";
 
 export default function SignIn({ navigation }) {
     const [emailAddress, setEmailAddress] = useState("");
     const [password, setPassword] = useState("");
 
     return (
-        <SafeAreaView style={styles.container}>
-            <Header />
+        <SafeAreaView style={commonStyles.container}>
             <View style={styles.bodyContainer}>
+                <Text style={styles.signInTitle}>Sign In</Text>
                 <TextInput
                     style={styles.input}
                     onChangeText={setEmailAddress}
@@ -28,7 +29,7 @@ export default function SignIn({ navigation }) {
                 <View style={styles.buttonContainer} >
                     <TouchableOpacity style={styles.button} onPress={() => {
                         if (emailAddress.toLowerCase() === "admin" && password.toLowerCase() === "admin") {
-                            navigation.navigate("Home")
+                            navigation.navigate("Tabs")
                         } else {
                             Alert.alert("Authentication Error", `You are not authenticated to login`)
                         }
@@ -47,14 +48,20 @@ export default function SignIn({ navigation }) {
 
 const styles = StyleSheet.create({
     container: {
-        flex:1,
+        flex: 1,
         backgroundColor: '#fff',
     },
-    bodyContainer:{
+    bodyContainer: {
         backgroundColor: '#fff',
         justifyContent: "center",
-        height:"100%"
+        height: "100%"
 
+    },
+    signInTitle: {
+        fontSize: 30,
+        textAlign: "center",
+        fontWeight: "600",
+        marginBottom: 30
     },
     input: {
         height: 40,

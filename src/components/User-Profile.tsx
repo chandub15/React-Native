@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import Header from './Header';
 
-export default function Profile({ }) {
+export default function Profile({ navigation }) {
 
     return (
         <SafeAreaView style={styles.container}>
@@ -27,6 +27,11 @@ export default function Profile({ }) {
                 <View style={styles.buttonContainer} >
                     <View style={styles.button}>
                         <Text style={styles.text}>chandraprakashb15@gmail.com</Text>
+                    </View>
+                </View >
+                <View style={styles.buttonContainer} >
+                    <View style={styles.button}>
+                        <Text style={styles.text} onPress={()=>navigation.navigate("Landing Page")}>Logout</Text>
                     </View>
                 </View >
             </View>
@@ -73,7 +78,6 @@ const styles = StyleSheet.create({
         padding: 10,
         flexDirection: 'column',
         justifyContent: 'space-around',
-
     },
     button: {
         backgroundColor: "#FA6E3B",

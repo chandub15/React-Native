@@ -6,6 +6,9 @@ import LandingPage from './src/components/LandingPage';
 import TabsNavigator from './src/components/Tabs-Navigator';
 import Home from './src/components/Home';
 import Team from './src/components/Our-Team';
+import InventoryManagement from './src/components/InventoryManagement';
+import RecipeManagement from './src/components/RecipeManagement';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -29,7 +32,8 @@ export default function App() {
         <Stack.Screen name="Tabs" component={TabsNavigator} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Team" options={{headerShown: true}} component={Team} />
-
+        <Stack.Screen name="Recipe Management" options={{headerShown: true}} component={RecipeManagement} />
+        <Stack.Screen name="Inventory Management" options={{headerShown: true}} component={InventoryManagement} />
       </Stack.Navigator>
     </NavigationContainer>
   );

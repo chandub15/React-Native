@@ -13,12 +13,12 @@ export default function Home({ navigation }) {
         </View>
         <View style={styles.buttonContainer} >
           <TouchableOpacity style={[styles.button, styles.boxShadow]} onPress={() => {
-            Alert.alert("Oops!! ", `We are launching soon`)
+           navigation.navigate("Recipe Management")
           }}>
             <Text style={styles.buttonText}>Recipe Mangement</Text>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.button, styles.boxShadow]} onPress={() => {
-            Alert.alert("Oops!! ", `We are launching soon`)
+           navigation.navigate("Inventory Management")
           }}>
             <Text style={styles.buttonText}>Inventory Mangement</Text>
           </TouchableOpacity>

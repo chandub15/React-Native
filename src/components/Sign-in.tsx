@@ -29,7 +29,7 @@ export default function SignIn({ navigation }) {
                 <View style={styles.buttonContainer} >
                     <TouchableOpacity style={styles.button} onPress={() => {
                         if (emailAddress.toLowerCase() === "admin" && password.toLowerCase() === "admin") {
-                            navigation.navigate("Tabs")
+                            navigation.reset({ index:0, routes:[{name:'Tabs'}]})
                         } else {
                             Alert.alert("Authentication Error", `You are not authenticated to login`)
                         }

@@ -55,9 +55,6 @@ const styles = StyleSheet.create({
         color: "#FA6E3B",
     },
     buttonContainer: {
-        flex: 2,
-        flexDirection: "column",
-        justifyContent: "center",
         backgroundColor: '#fff',
     },
     button: {

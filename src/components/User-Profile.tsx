@@ -4,7 +4,8 @@ import {
     Text,
     View,
     Image,
-    SafeAreaView
+    SafeAreaView,
+    Alert
 } from 'react-native';
 import Header from './Header';
 
@@ -14,10 +15,9 @@ export default function Profile({ navigation }) {
         <SafeAreaView style={styles.container}>
             <Header />
             <View style={styles.bodyContainer}>
-                <View style={styles.titleContainer} >
-                    <Text style={styles.titleText} >Profile</Text>
+                <View style={styles.avatarContainer} >
+                    <Image style={styles.avatar} source={{ uri: 'https://bootdey.com/img/Content/avatar/avatar6.png' }} />
                 </View>
-                <Image style={styles.avatar} source={{ uri: 'https://bootdey.com/img/Content/avatar/avatar6.png' }} />
                 <View style={styles.buttonContainer} >
                     <View style={styles.button}>
                         <Text style={styles.text}>Chandra Prakash</Text>
@@ -30,7 +30,25 @@ export default function Profile({ navigation }) {
                 </View >
                 <View style={styles.buttonContainer} >
                     <View style={styles.button}>
-                        <Text style={styles.text} onPress={()=>navigation.reset({ index:0, routes:[{name:'Landing Page'}]})}>Logout</Text>
+                        <Text style={styles.text} onPress={() => {
+
+                            Alert.alert("Please Confirm", `Are you sure?`, [
+                                {
+                                    text: "Yes",
+                                    onPress: () => {
+                                        navigation.reset({
+                                            index: 0,
+                                            routes: [{ name: "Landing Page" }]
+                                        })
+                                    }
+                                },
+                                {
+                                    text: "No",
+                                    onPress: () => { }
+                                }
+                            ])
+
+                        }}>Logout</Text>
                     </View>
                 </View >
             </View>
@@ -49,29 +67,17 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         height: "100%"
     },
+    avatarContainer:{
+        flex:1,
+        alignItems: 'center',
+        justifyContent:"center",
+    },
     avatar: {
-        width: 130,
-        height: 130,
-        borderRadius: 63,
+        width: 200,
+        height: 200,
+        borderRadius: 120,
         borderWidth: 4,
         borderColor: "white",
-        alignSelf: 'center',
-        marginBottom: 100
-    },
-    titleContainer: {
-        fontWeight: "600",
-        textAlign: "center",
-        justifyContent: "center",
-        alignItems: "flex-end",
-        flexDirection: "row"
-    },
-    titleText: {
-        paddingLeft: 20,
-        paddingRight: 20,
-        fontSize: 25,
-        fontWeight: "600",
-        textAlign: "center",
-        marginBottom: 100,
     },
     buttonContainer: {
         padding: 10,

@@ -31,13 +31,11 @@ const styles = StyleSheet.create({
     },
     bodyContainer: {
         backgroundColor: '#fff',
-        justifyContent: "center",
         height: "100%"
     },
     titleContainer: {
-        flex: 1,
+        flex: 2,
         fontWeight: "600",
-        textAlign: "center",
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "row"
@@ -47,12 +45,11 @@ const styles = StyleSheet.create({
         paddingRight: 20,
         fontSize: 35,
         fontWeight: "600",
-        textAlign: "center",
+        textAlign: "center"
     },
     textBodyContainer: {
         flex: 3,
         fontWeight: "600",
-        textAlign: "center",
         justifyContent: "center",
         alignItems: "flex-start",
         flexDirection: "row"
@@ -60,8 +57,6 @@ const styles = StyleSheet.create({
     bodyText: {
         paddingLeft: 20,
         paddingRight: 20,
-        fontSize: 20,
-        fontWeight: "600",
-        textAlign: "center",
+        fontSize: 20
     }
 });

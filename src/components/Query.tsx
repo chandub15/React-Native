@@ -2,14 +2,10 @@ import React from 'react';
 import { StyleSheet, SafeAreaView, Text, View } from 'react-native';
 import Header from './Header';
 
-const Query=(props)=> {
-    const {navigation,route} = props;
-
-
-
+const Query = ({ route }) => {
     return (
         <SafeAreaView style={styles.container}>
-            <Header/>
+            <Header />
             <View style={styles.bodyContainer}>
                 <Text style={styles.queryTitle}>We will get back to you for your Query</Text>
                 <Text style={styles.input}>{route.params.emailQuery}</Text>
@@ -32,7 +28,7 @@ const styles = StyleSheet.create({
         height: "100%"
     },
     queryTitle: {
-       
+
         textAlign: "center",
         fontWeight: "600",
         marginBottom: 30

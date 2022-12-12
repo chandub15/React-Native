@@ -31,7 +31,7 @@ export default function Profile({ navigation }) {
                 </View >
                 <View style={styles.buttonContainer} >
                     <View style={styles.button}>
-                        <Text style={styles.text} onPress={()=>navigation.navigate("Landing Page")}>Logout</Text>
+                        <Text style={styles.text} onPress={()=>navigation.reset({ index:0, routes:[{name:'Landing Page'}]})}>Logout</Text>
                     </View>
                 </View >
             </View>

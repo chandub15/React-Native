@@ -8,7 +8,7 @@ import Home from './src/components/Home';
 import Team from './src/components/Our-Team';
 import InventoryManagement from './src/components/InventoryManagement';
 import RecipeManagement from './src/components/RecipeManagement';
-
+import Query from './src/components/Query';
 
 const Stack = createNativeStackNavigator();
 
@@ -34,6 +34,8 @@ export default function App() {
         <Stack.Screen name="Team" options={{headerShown: true}} component={Team} />
         <Stack.Screen name="Recipe Management" options={{headerShown: true}} component={RecipeManagement} />
         <Stack.Screen name="Inventory Management" options={{headerShown: true}} component={InventoryManagement} />
+        <Stack.Screen name="Query" options={{headerShown: true}} component={Query} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -6,7 +6,7 @@ import LandingPage from './src/components/LandingPage';
 import TabsNavigator from './src/components/Tabs-Navigator';
 import Home from './src/components/Home';
 import Team from './src/components/Our-Team';
-import InventoryManagement from './src/components/InventoryManagement';
+import InventoryManagement from './src/components/InventoryManagment';
 import RecipeManagement from './src/components/RecipeManagement';
 import Query from './src/components/Query';
 

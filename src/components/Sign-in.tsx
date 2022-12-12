@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { StyleSheet, TextInput, SafeAreaView, TouchableOpacity, Text, View, Alert } from 'react-native';
-import Header from './Header';
 import commonStyles from "../styles/common";
 
 export default function SignIn({ navigation }) {

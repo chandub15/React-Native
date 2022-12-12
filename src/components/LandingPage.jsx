@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, SafeAreaView, TouchableOpacity, Text, View, Alert } from 'react-native';
+import { StyleSheet, SafeAreaView, TouchableOpacity, Text, View } from 'react-native';
 
 export default function LandingPage({ navigation }) {
 

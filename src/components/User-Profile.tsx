@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
     StyleSheet,
     Text,
     View,
     Image,
-    TouchableOpacity,
     SafeAreaView
 } from 'react-native';
 import Header from './Header';

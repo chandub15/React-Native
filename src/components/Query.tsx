@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { StyleSheet, TextInput, SafeAreaView, TouchableOpacity, Text, View, Alert } from 'react-native';
+import React from 'react';
+import { StyleSheet, SafeAreaView, Text, View } from 'react-native';
 import Header from './Header';
 
 const Query=(props)=> {
